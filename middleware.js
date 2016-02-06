@@ -1,5 +1,7 @@
 'use strict';
 
+var mix = require('reduxr-mix');
+
 // Redux middleware to systematically execute async actions.
 // The action is expected to have an 'execAsync' method. (see ajax.js)
 // The action then gets transformed into the action's type with
@@ -8,18 +10,6 @@
 // _done
 // _fail
 // _cancel
-
-function copy(o1, o2) {
-  for (var key in o2) {
-    o1[key] = o2[key]
-  }
-
-  return o1;
-}
-
-function mix(o1, o2) {
-  return copy(copy({}, o1), o2);
-}
 
 function isAsync (action) {
   return !!action.execAsync;
@@ -56,7 +46,7 @@ function dispatchAsync(store, action) {
   var dispatch = store.dispatch;
   var type = action.type;
   var execAsync = action.execAsync;
-  var original = copy({}, action);
+  var original = mix({}, action);
   delete original.execAsync;
 
   function dispatchDone(obj) {

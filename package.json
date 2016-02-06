@@ -27,5 +27,8 @@
     "deep-freeze": "0.0.1",
     "faker": "^3.0.1",
     "jasmine-es6": "0.0.9"
+  },
+  "dependencies": {
+    "reduxr-mix": "0.0.11"
   }
 }
