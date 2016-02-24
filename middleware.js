@@ -73,11 +73,13 @@ function dispatchAsync(store, action) {
 
   promise
     .then(dispatchDone)
-    .catch(err => err.readyState === 0 ? dispatchCancel() : dispatchErr(err));
+    .catch(function (err) {
+      return err.readyState === 0 ? dispatchCancel() : dispatchErr(err)
+    });
 
   return mix(original, {
-    then: fn => promise.then(fn),
-    catch: fn => promise.catch(fn),
+    then: function (fn) { return promise.then(fn) },
+    catch: function (fn) { return promise.catch(fn) },
     type: type + '_start'
   })
 }
