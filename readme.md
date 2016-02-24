@@ -2,6 +2,8 @@
 
 Easily and cleanly handle AJAX in Redux.
 
+Part of the [reduxr](https://github.com/chrisdavies/reduxr) family of packages.
+
 [![Build Status](https://travis-ci.org/chrisdavies/reduxr-async.svg?branch=master)](https://travis-ci.org/chrisdavies/reduxr-async)
 
 ## Middleware
