@@ -24,7 +24,10 @@ function ajaxAction (ajax, method) {
         return ajax({
           url: url,
           data: data,
-          method: method
+          method: method,
+          headers: {
+            Accept: 'application/json'
+          }
         })
       }
     }
