@@ -1,6 +1,6 @@
 {
   "name": "reduxr-async",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Redux async/promise middleware and ajax helpers",
   "main": "ajax.js",
   "directories": {},
